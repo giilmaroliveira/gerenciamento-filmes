@@ -1,11 +1,12 @@
 @extends('layout')
 
 @section('title')
-Adicionar Filme
+{{ $filme->titulo }} - Edição
 @endsection('title')
 
 @section('content')
-<form method="post">
+<form method="post" action="/filmes/{{ $filme->id}}">
+    @method('PUT')
     @include('filmes/form')
 </form>
 @endsection('content')

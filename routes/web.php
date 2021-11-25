@@ -16,5 +16,11 @@ use App\Http\Controllers\FilmesController;
 
 Route::get('/', function () {});
 
-Route::get('/filmes', [FilmesController::class, 'index']);
+Route::get('/filmes', [FilmesController::class, 'index'])
+    ->name('listar_filmes');
+
 Route::get('/filmes/criar', [FilmesController::class, 'create']);
+Route::post('/filmes/criar', [FilmesController::class, 'store']);
+Route::delete('/filmes/{id}', [FilmesController::class, 'destroy']);
+Route::get('/filmes/{id}', [FilmesController::class, 'edit']);
+Route::put('/filmes/{id}', [FilmesController::class, 'update']);
